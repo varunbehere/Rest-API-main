@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Database</title>
+</head>
+<style>
+    /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+hr {
+    border: 2px solid rgb(0, 0, 0);
+    margin: 20px 0;
+}
+
+#books {
+    /* Add styling for the list of books if needed */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #015426;
+    color: #fff;
+    background-color: #00ff6e;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #77e8b7;
+    border-color: #000000;
+}
+
+</style>
+<body>
+    <div class="container">
+    <hr>
+    <h1>List of books</h1>
+    <hr>
+    <div>
+        <div class="row" id="books">
+        </div>
+    </div>
+</div>
+
+<div id="editBookModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="editForm" method="POST">
+                    <div class="form-group">
+                        <label for="ISBN">ISBN</label>
+                        <input class="form-control" name="isbn" id="isbn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input class="form-control" name="title" id="title">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Author">Author</label>
+                        <input class="form-control" name="author" id="author">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Publisheddate">Published Date</label>
+                        <input class="form-control" type="Date" name="publisheddate" id="publisheddate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Publisher">Publisher</label>
+                        <input class="form-control" name="publisher" id="publisher">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numOfPages">Number of Pages</label>
+                        <input class="form-control" name="numOfPages" id="numOfPages">
+                    </div>
+                    <!--Other fields-->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Our JS file-->
+<script src="book-list.js"></script>
+</body>
+</html>
